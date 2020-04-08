@@ -1,4 +1,4 @@
-const checkLoto = (first_name, last_name, email) => {
+const checkLoto = (first_name, last_name, email, numbers) => {
   var notice_first_name;
 ​  var first_name = document.getElementById("first_name").value;
   if (first_name == "" || first_name == undefined ) {
@@ -18,7 +18,6 @@ const checkLoto = (first_name, last_name, email) => {
   var reg_syntax_email = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,3}$/;
   var resultat = reg_syntax_email.test(email);
 ​
-
   if (email == "" || email == undefined ) {
     notice_email = "Email !!";
     document.getElementById("notice_email").innerHTML = notice_email;
@@ -44,6 +43,7 @@ const checkLoto = (first_name, last_name, email) => {
   num5 = document.getElementById("number5").value;
   num6 = document.getElementById("number6").value;
 ​
+  var numbers = [num1, num2, num3, num4, num5, num6]
   if ((num1 == "" || num1 == undefined) || (num2 == "" || num2 == undefined) || (num3 == "" || num3 == undefined) || (num4 == "" || num4 == undefined) || (num5 == "" || num5 == undefined) || (num6 == "" || num6 == undefined) ) {
     notice_number = "Manque des numéros !!";
     document.getElementById("notice_number").innerHTML = notice_number;
@@ -55,12 +55,14 @@ const checkLoto = (first_name, last_name, email) => {
     var Int4 = 40;
     var Int5 = 50;
     var Int6 = 60;
-    if (num1 == Int1 && num2 == Int2 && num3 == Int3 && num4 == Int4 && num5 == Int5 && num6 == Int6 ) {
+    var solution = [Int1, Int2, Int3, Int4, Int5, Int6]
+
+    if (numbers == solution) {
       win = "Félicitations vous avez gagné 1 million !!!!!";
       document.getElementById("win").innerHTML = win;
     }
     else {
       loose = "Perdu !!!!!"
       document.getElementById("loose").innerHTML = loose;
+      }
     }
-}
