@@ -1,23 +1,20 @@
-function checkLoto() {
-  var first_name, notice_first_name;
-​  first_name = document.getElementById("first_name").value;
-​
+const checkLoto = (first_name, last_name, email) => {
+  var notice_first_name;
+​  var first_name = document.getElementById("first_name").value;
   if (first_name == "" || first_name == undefined ) {
     notice_first_name = "Prénom !!";
     document.getElementById("notice_first_name").innerHTML = notice_first_name;
   }
 ​
-  var last_name, notice_last_name;
-​  last_name = document.getElementById("last_name").value;
-​
+  var notice_last_name;
+  var last_name = document.getElementById("last_name").value;
   if (last_name == "" || last_name == undefined ) {
     notice_last_name = "Nom !!";
     document.getElementById("notice_last_name").innerHTML = notice_last_name;
   }
 ​
-  var email, notice_email, notice_length_email, notice_syntax_email;
-​
-  email = document.getElementById("email").value;
+  var notice_email, notice_length_email, notice_syntax_email;
+​  var email = document.getElementById("email").value;
   var reg_syntax_email = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,3}$/;
   var resultat = reg_syntax_email.test(email);
 ​
